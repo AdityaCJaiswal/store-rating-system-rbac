@@ -58,10 +58,6 @@ A comprehensive full-stack web application that allows users to submit ratings f
 ![Store Management](screenshots/store-management.png)
 *Advanced store management with filtering, sorting, and detailed store information*
 
-### Rating System
-![Rating System](screenshots/rating-system.png)
-*Interactive rating interface with star-based feedback system*
-
 ## 🛠️ Tech Stack
 
 ### Backend
@@ -118,7 +114,7 @@ A comprehensive full-stack web application that allows users to submit ratings f
 ### Quick Start (Automated Setup)
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/AdityaCJaiswal/store-rating-system-rbac
 cd store-rating-system-rbac
 
 # Run automated setup
@@ -483,22 +479,6 @@ This project is licensed under the MIT License.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📞 Support
-
-For support and questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the troubleshooting section above
-
-## 🙏 Acknowledgments
-
-- React.js community for the excellent framework
-- Express.js team for the robust backend framework
-- PostgreSQL for the reliable database system
-- All contributors and testers
-
 ---
 
 **Built with ❤️ by Aditya Jaiswal**
-
-*Last updated: December 2024*
