@@ -25,25 +25,30 @@ const StoreOwnerDashboard = () => {
 
   useEffect(() => {
     fetchStoreData();
-    fetchRatings();
-  }, [currentPage]);
+  }, []);
+
+  useEffect(() => {
+    if (store) {
+      fetchRatings();
+    }
+  }, [store, currentPage]);
 
   const fetchStoreData = async () => {
     try {
-      // Get user's store
-      const response = await axios.get('/api/stores');
-      const userStores = response.data.stores.filter(s => s.owner_id);
+      // Get store owner dashboard data
+      const response = await axios.get('/api/store-owner/dashboard');
       
-      if (userStores.length > 0) {
-        const userStore = userStores[0];
-        setStore(userStore);
+      if (response.data.store) {
+        setStore(response.data.store);
         setStats({
-          totalRatings: userStore.total_ratings,
-          averageRating: parseFloat(userStore.average_rating)
+          totalRatings: response.data.totalRatings,
+          averageRating: response.data.averageRating
         });
       }
     } catch (error) {
       console.error('Error fetching store data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,8 +61,6 @@ const StoreOwnerDashboard = () => {
       setPagination(response.data.pagination);
     } catch (error) {
       console.error('Error fetching ratings:', error);
-    } finally {
-      setLoading(false);
     }
   };
 

@@ -33,7 +33,8 @@ router.get('/dashboard', authenticateToken, requireStoreOwner, async (req, res) 
         id: store.id,
         name: store.name,
         email: store.email,
-        address: store.address
+        address: store.address,
+        created_at: store.created_at
       },
       totalRatings: parseInt(store.total_ratings),
       averageRating: parseFloat(store.average_rating)
